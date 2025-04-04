@@ -287,7 +287,7 @@ if __name__ == "__main__":
     experiment args
     """
     parser.add_argument('--experiment_name', type=str, default="mm_clip_base", help='大类实验项目名')
-    parser.add_argument('--model', type=str, default="my_model", help='见model_factory.py')
+    parser.add_argument('--model', type=str, default="MMDA", help='见model_factory.py')
     parser.add_argument('--modality', type=str, default="RGBDIR", help='RGB/D/IR/RGBD/RGBIR/RGBDIR')
     parser.add_argument('--train', nargs='+', default="SURF USC WMCA", help='WMCAGT(WMCA ground test)/')
     parser.add_argument('--test', nargs='+', default="CeFA", help='WMCAGT(WMCA ground test)/')

@@ -6,7 +6,7 @@ from torch import nn, einsum
 
 from models.layer.MoE.stMoE.st_moe import GEGLU, TopNGating, MixtureOfExpertsReturn, Experts
 from models.network.clip import clip
-
+from models.normalization.RMSNorm import RMSNorm
 """
 MoE adaptor + diff attn + distributed label + subspace(U cross)
 """

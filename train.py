@@ -18,7 +18,6 @@ from data_preprocess.Load_multi_domain_multi_modal import Normaliztion, ToTensor
 from data_preprocess.Load_multi_domain_multi_modal import RandomHorizontalFlip
 from data_preprocess.Load_multi_domain_multi_modal import Multi_Domain_Spoofing_train
 from data_preprocess.Load_multi_domain_multi_modal import Multi_Domain_Spoofing_valtest
-from models.loss.ContrastiveLoss import  ContrastiveLoss1
 from models.model_factory import get_model
 from utils.common_util import forward_model, CosineAnnealingLR_with_Restart
 from utils.utils_FAS_MultiModal import AvgrageMeter, setup_seed
@@ -246,7 +245,7 @@ def train_test():
     model, optim, dataloader_train, dataloader_test, scheduler = accelerator.prepare(
         model, optim, dataloader_train, dataloader_test, scheduler
     )
-    criterion = ContrastiveLoss1()
+    criterion = None
     best_metrics = {
         "rgb": {
             'HTER': 1.0,

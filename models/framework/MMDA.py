@@ -364,12 +364,6 @@ class MMDA(nn.Module):
         hidden_mult = 4
         dim = 512
         dim_hidden = int(dim * hidden_mult * 2 / 3)
-        self.classifier = nn.Sequential(
-            RMSNorm(dim),
-            nn.Linear(dim, dim_hidden * 2),
-            GEGLU(dim_hidden),
-            nn.Linear(dim_hidden, 2)
-        )
 
         for p in self.model.parameters(): p.require_grads = False
 

@@ -98,8 +98,8 @@ def step_batch(model, sample_batched, optim, accelerator, modality='RGBDIR', mod
         if mode == 'train':
             logits = forward_model(model, inputs, inputs_depth, inputs_ir,domain, modality)
             # 训练：算loss反向传播，放回结果
-            # loss = model.module.cal_loss(spoof_label, criterion)
-            loss = model.cal_loss(spoof_label, criterion)
+            loss = model.module.cal_loss(spoof_label, criterion)
+            # loss = model.cal_loss(spoof_label, criterion)
             accelerator.backward(loss["total_loss"])
 
             optim.step()

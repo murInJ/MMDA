@@ -1,4 +1,4 @@
 # MMDA
-The official code implementation for "Denoising and Alignment: Leveraging Pretrained Spaces for Generalized Multi-Modal Face Anti-Spoofing"
+The official code implementation for "Purify then Guide: Rethinking Domain Generalization for Multimodal Face Anti-Spoofing"
 
 coming soon~

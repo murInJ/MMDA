@@ -9,5 +9,5 @@ def get_model(model_name, args=None):
 
 
 def get_MMDA(args):
-    return MMDA()
+    return MMDA(freeze_backbone=getattr(args, "freeze_backbone", False))
 

@@ -352,7 +352,7 @@ class adaptor(nn.Module):
 
 class MMDA(nn.Module):
 
-    def __init__(self):
+    def __init__(self, freeze_backbone=False):
         super(MMDA, self).__init__()
         self.model, _ = clip.load("ViT-B/16", 'cuda:0')
         self.model.to(torch.float32)
@@ -365,7 +365,9 @@ class MMDA(nn.Module):
         dim = 512
         dim_hidden = int(dim * hidden_mult * 2 / 3)
 
-        for p in self.model.parameters(): p.require_grads = False
+        if freeze_backbone:
+            for p in self.model.parameters():
+                p.requires_grad_(False)
 
     def forward_visual(self, x):
         B, C, H, W = x.shape

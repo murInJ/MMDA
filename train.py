@@ -304,6 +304,8 @@ if __name__ == "__main__":
                         help='True  -->  save the best weight; False -->  dont save')
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--load', type=str, default="", help='weight path')
+    parser.add_argument('--freeze_backbone', action='store_true',
+                        help='freeze the pretrained CLIP backbone; full fine-tuning is used by default')
     """
     model args
     """
